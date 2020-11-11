@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="The Earth" startnode="1" creator="Twine" creator-version="2.3.9" ifid="3C1B25C3-F2F0-4B2C-AA11-74895AF46131" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
+<tw-storydata name="The Earth" startnode="1" creator="Twine" creator-version="2.3.9" ifid="3C1B25C3-F2F0-4B2C-AA11-74895AF46131" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar tw-icon.redo {
  display: none;
 }
 tw-sidebar tw-icon.undo {
@@ -319,7 +319,143 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" name="Third Character" tags="" position="899,2700" size="100,100"></tw-passagedata></tw-storydata>
+Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" name="Third Character" tags="" position="899,2700" size="100,100">You are an executive at a moderately large energy company that primarily uses fossil fuels as a means of providing energy. You are responsible for making sure the company is profitable while also secretly trying to steer the company towards developing a renewable energy infrastructure and slowly shifting from using fossil fuels to using renewable energy that doesn’t harm the environment significantly. However, this task may prove tricky as you are also responsible for making sure that the company’s revenue and essentially your company profitability value doesn’t drop too much or else you’ll be fired and replaced by someone who won’t seek to implement renewable energy sources at the company, which will cause the green level to drop and eventually earth’s demise. 
+
+Go to [[Day 1 of Work |Decision 1]]
+
+(set: $company_revenue to 1000000000)
+(set: $green_level to 5)</tw-passagedata><tw-passagedata pid="39" name="Decision 1" tags="" position="700,2799" size="100,100">Your company is interested in developing more coal factories across the midwest united states, an area that has been largely uncharted by competitors. Do you agree with your subordinates suggestions to start building factories in the midwest or do you reject their proposals and instead start investing in costly wind mills in the area instead. 
+
+[[Invest in coal |Coal]]
+[[Invest in wind mills |Wind Mills]]
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="40" name="Coal" tags="" position="502,2899" size="100,100">You decided to invest in coal. Your revenue went up.
+
+(set: $company_revenue to $company_revenue * 1.1)
+(set: $green_level to $green_level - 1)
+
+After your company has implemented either more coal plants, it is seeking to capitalize on the company’s success and increase in profits. 
+
+Do you continue to build more coal plants or do you instead heed the advice of your head R and D scientists and begin investing the extra money in electrostatic filters for your coal plants to reduce the amount of greenhouse emissions from the newly built plants.
+
+
+[[Build more coal plants |More Coal]]
+[[Invest in electrostatic filters|Electrostatic Filters]]
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="41" name="Wind Mills" tags="" position="895,2899" size="100,100">You decided to invest in wind mills. Your revenue went up.
+
+Do you continue to build more wind mills, stop building and researching more renewable energy sources you can develop, or do you stop building wind mills and back track towards building coal plants like your higherups are saying you should have done in the first place. 
+
+[[More windmills]]
+[[Research]]
+[[Backtrack]]
+
+(set: $company_revenue to $company_revenue * 0.9)
+(set: $green_level to $green_level + 1)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level
+</tw-passagedata><tw-passagedata pid="42" name="More Coal" tags="" position="401,3102" size="100,100">You choose more coal plants.
+
+[[Continue |Decision 3]]
+
+(Set: $company_revenue to $company_revenue * 1.1)
+(Set: $green_level to $green_level - 2)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="43" name="Electrostatic Filters" tags="" position="599,3099" size="100,100">You choose investing in electrostatic filters
+
+[[Continue |Decision 3]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level + 2)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="44" name="Decision 3" tags="" position="698,3298" size="100,100">(If: $company_revenue &lt; 900000000)[
+Upper level executives are not happy with how the company is performing.
+
+You lost control of the company. Upper level executives implemented a new fossil fuel initiative. Your lead scientists, however, gave you the option to go behind their back and begin allocating funding to to develop nuclear energy. Would you accept the option? 
+
+[[Go behind]]
+[[Reject the offer]]
+]
+
+(If: $company_revenue &gt; 900000000)[
+Upper level executives are happy with how the company is performing. They let you be and allow you to make a choice on whether or not you are allowed to start a solar energy division in the company or continue investing in coal.
+
+[[Invest in more coal | Even More Coal]]
+[[Choose solar energy division | Solar Energy Division]]
+
+]
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="45" name="More windmills" tags="" position="842,3100" size="100,100">You choose building more windmills.
+
+[[Continue |Decision 3]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level + 1)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="46" name="Research" tags="" position="970,3100" size="100,100">You chose to research.
+
+[[Continue |Decision 3]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level + 1)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="47" name="Backtrack" tags="" position="1101,3100" size="100,100">You choose to backtrack.
+
+[[Continue |Decision 3]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level - 1)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="48" name="Go behind" tags="" position="473,3448" size="100,100">[[Continue |Decision 4]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level + 2)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="49" name="Reject the offer" tags="" position="623,3448" size="100,100">??
+
+[[Continue |Decision 4]]
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="50" name=" Even More Coal" tags="" position="773,3448" size="100,100">You chose to invest in even more coal	
+
+[[Continue |Decision 4]]
+
+(Set: $company_revenue to $company_revenue * 1.1)
+(Set: $green_level to $green_level - 1)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="51" name=" Solar Energy Division" tags="" position="923,3448" size="100,100">You chose to start a solar engergy divison. 
+
+[[Continue |Decision 4]]
+
+(Set: $company_revenue to $company_revenue * 0.9)
+(Set: $green_level to $green_level - 2)
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Revenue: $company_revenue
+Green level: $green_level</tw-passagedata><tw-passagedata pid="52" name="Decision 4" tags="" position="700,3597" size="100,100"></tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
