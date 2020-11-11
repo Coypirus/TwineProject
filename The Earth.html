@@ -56,7 +56,7 @@ Good job! You have earned 3 more economy points
 (set: $q_remaining to $q_remaining - 1)
 (if: $q_remaining is 0)[Go to the [[End]]]
 (if: $q_remaining is not 0)[Which topic would you like to discuss next, [[government accountability]] or [[climate change]]?]
-</tw-passagedata><tw-passagedata pid="8" name="End" tags="" position="837,588.6874694824219" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online. 
+</tw-passagedata><tw-passagedata pid="8" name="End" tags="" position="837,588" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online. 
 Do you choose to write an [[opinion piece]], [[objective summary]], or an [[analysis piece]]?</tw-passagedata><tw-passagedata pid="9" name=" inquire further" tags="" position="313,249" size="100,100">Despite pushing the candidate further on the issue you receive no further response than &quot;I trust the people around me. I have nothing more to say on the topic.&quot;
 
 While you do not manage to get anything from him, his denial shifts public opinion, and an investigation begins. Eventually, it is discovered that several officials have been bribed to funnel resources away from renewable energy and into subsidies for big oil.
@@ -76,24 +76,242 @@ You have earned 3 more economy points!
 [[Next -&gt; topic changeC]] </tw-passagedata><tw-passagedata pid="12" name=" topic changeC" tags="" position="835,369" size="100,100">(if: $c_determiner is 0)[Wrong choice, even if climate change is not an issue that you are particularly interested in it is vital to our world that everyone does their part, and learning about the issue is one of the best steps anyone can take]
 (set: $q_remaining to $q_remaining - 1)
 (if: $q_remaining is not 0)[What would you like to learn about next, [[the economy]] or [[government accountability]]?
-(if: $q_remaining is 0)[Go to the [[End]]]</tw-passagedata><tw-passagedata pid="13" name="opinion piece" tags="" position="687,710.6874694824219" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
-[[Add 5 points to your economy score -&gt; economy score end]] or [[add 5 points to your climate score -&gt; climate score end]]</tw-passagedata><tw-passagedata pid="14" name="objective summary" tags="" position="866,751.6874694824219" size="100,100">You decide that getting the information out is more important than your personal subjective opinion, so you write an objective summary of the night.
+(if: $q_remaining is 0)[Go to the [[End]]]</tw-passagedata><tw-passagedata pid="13" name="opinion piece" tags="" position="687,710" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
+[[Add 5 points to your economy score -&gt; economy score end]] or [[add 5 points to your climate score -&gt; climate score end]]</tw-passagedata><tw-passagedata pid="14" name="objective summary" tags="" position="866,751" size="100,100">You decide that getting the information out is more important than your personal subjective opinion, so you write an objective summary of the night.
 
 3 points have been added to both your economy score and climate score
 
 (set: $climate_score to $climate_score + 3)
 (set: $economy_score to $economy_score + 3)
 
-[[Next]]</tw-passagedata><tw-passagedata pid="15" name="analysis piece" tags="" position="1047,690.6874694824219" size="100,100">You decide to do a lot of research, and end up writing a detailed analysis of the policies that the candidate proposed that night. Your article gains traction, being published by a major newspaper.
+[[Next]]</tw-passagedata><tw-passagedata pid="15" name="analysis piece" tags="" position="1047,690" size="100,100">You decide to do a lot of research, and end up writing a detailed analysis of the policies that the candidate proposed that night. Your article gains traction, being published by a major newspaper.
 (if: $climate_score &gt; $economy_score)[Your climate score has increased by 3, and economy score by 1 (set: $climate_score to $climate_score + 3) (set: $economy_score to $economy_score + 1)
 
-[[Next]] </tw-passagedata><tw-passagedata pid="16" name=" economy score end" tags="" position="517,877.6874694824219" size="100,100">*Summary Page*
+[[Next]] </tw-passagedata><tw-passagedata pid="16" name=" economy score end" tags="" position="517,877" size="100,100">*Summary Page*
 (set: $economy_score to $economy_score + 3)
-Move to [[Person2]]</tw-passagedata><tw-passagedata pid="17" name=" climate score end" tags="" position="690,872.6874694824219" size="100,100">*Summary Page*
+Move to [[Person2]]</tw-passagedata><tw-passagedata pid="17" name=" climate score end" tags="" position="690,872" size="100,100">*Summary Page*
 (set: $climate_score to $climate_score + 3)
-Move to [[Person2]]</tw-passagedata><tw-passagedata pid="18" name="Next" tags="" position="965,896.6874694824219" size="100,100">*Summary Page*
+Move to [[Person2]]</tw-passagedata><tw-passagedata pid="18" name="Next" tags="" position="965,896" size="100,100">*Summary Page*
 
-Move to [[Person2]]</tw-passagedata><tw-passagedata pid="19" name="Person2" tags="" position="719,1054.6874694824219" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+Move to [[Person2]]</tw-passagedata><tw-passagedata pid="19" name="Person2" tags="" position="719,1054" size="100,100">You are a freshly elected leader of a small country with limited powers on Earth and have the power to make decisions that will either lead towards or away from climate destruction for Earth in the next few years. The choices presented in the game are not so clear cut as they seem, as an elected representative you have zero ability to make an executive decision without support, whether that be through political or financial means.  
+(set: $public_support to 50)
+(set: $slippery_slope to false)
+(set: $economy_score2 to 0)
+(set: $climate_score2 to 0)
+
+Go to [[Decision One]]
+
+&lt;b&gt;Scoreboard&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support</tw-passagedata><tw-passagedata pid="20" name="Decision One" tags="" position="711,1203" size="100,100">You ran a political campaign as a centrist that sought to unite the country, and now you have a busy schedule ahead of you in passing legislation. On topics like climate change, you have stated before that you support the science behind it, but your key supporters, most importantly energy companies, also make a big factor in your country’s economy. What do you do?
+
+[[Science]] - You recognize that while the country’s economy is important, you also realize postponing the issue of climate change any further will just make a bigger problem later on. You intend to tackle carbon dioxide emissions and regulate energy in your country harshly, in a joint effort with other countries to subvert climate change.
+
+[[Centrist]] - You recognize the importance of both your country’s economy as well as climate change, so you decide to try setting a balanced path towards that can preserve both the economy as well as the planet. You intend to participate in international effort against climate change, but only so by intending to meet the bare minimum international agreements on carbon dioxide emissions.
+
+[[Economy]] - You as a politician, believe that your country’s well-being comes absolutely first over anything else, and since your country’s economy is so dependent on its energy industry, you decide to not put any more regulations, in fear of putting the whole country in a depression. You intend to subsidize and invest the energy industry even more, so that the economy of the country improves.</tw-passagedata><tw-passagedata pid="21" name="Science" tags="" position="569,1354" size="100,100">You picked the stance on climate change that aligns with science, but at the expense of your key supporters and some of your supporters who originally supported your centrist campaign now see you as too radical to support.
+Public Support -10, Economy -5, Climate Score +5
+(set: $economy_score2 to $economy_score2 - 5)
+(set: $climate_score2 to $climate_score2 + 5)
+(set: $public_support to $public_support -10)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+
+[[Decision Two]] 
+</tw-passagedata><tw-passagedata pid="22" name="Centrist" tags="" position="719,1354" size="100,100">You picked the stance on climate change that tries to consider both the planet’s condition as well as the financial situation of the country. The honesty behind your centrist agenda stands, but you slowly lose support from people on both sides of the spectrum, who were hoping that you were going to support each of their respective sides more.
+
+Public Support -5, Economy -3, Climate Score +2
+
+(set: $economy_score2 to $economy_score2 - 3)
+(set: $climate_score2 to $climate_score2 + 2)
+(set: $public_support to $public_support - 5)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+[[Decision Two]] 
+</tw-passagedata><tw-passagedata pid="23" name="Economy" tags="" position="869,1354" size="100,100">You picked the stance on climate change that stresses the economy of your country before anything. Your key supporters, oil executives and energy contractors, approve your decision, but your bottom line of the middle class fall out, as they think this decision is dishonest and in violation of your centrist political agenda you advertised during your campaign.
+
+Public Support -15, Economy +3, Climate Score -5
+
+(set: $economy_score2 to $economy_score2 + 5)
+(set: $climate_score2 to $climate_score2 - 5)
+(set: $public_support to $public_support - 15)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+[[Decision Two]]
+</tw-passagedata><tw-passagedata pid="24" name="Decision Two" tags="" position="709,1528" size="100,100">As you go into the 2nd month as the country’s leader, the country nosedives into a recession. This was expected of you, as the previous leader passed some policies to regulate coal mining in the southern parts of your country. The regulation was inefficiently done with poor insight, and people, who once had good impressions of energy regulation, are now skeptical of energy regulation in general and are now calling for stimulus packages and deregulation. What do you do?
+
+[[Science -&gt; Science2]] - Yes, the country’s economy is important, but it’s times like these where your country’s energy companies exploit the current political sentiment for their own profits. You know that if the regulation was done in a much more well-informed manner, it could actually be efficient in both maintaining the economy as well as limiting carbon dioxide emissions. You announce to the public that you intend to modify the regulation to be more efficient.
+
+[[Centrist -&gt; Centrist2]] - You recognize that this regulation, while it was tied with good intent, was done with poor research and sacrifices too much of the country’s economy for very little gain. You recognize that the while a more efficient, well-researched regulation on coal can really do wonders for climate change efforts, but you also do recognize that the public will not take well to any form of regulations at all, as they blame it for their financial hardships. You announce to repeal the regulations and immediately provide economic relief to your constituents.
+
+[[Economy -&gt; Economy2]] - You recognize that this recession needs immediate attention, and any other priority can be addressed later. You decide to repeal the regulations on coal and further deregulate the energy industry as a whole, to win over your key supporters again while hoping that the public does not pay attention too much to it in the middle of the recession. Additionally, you provide economic aid to the public, but it is not needed as much expected as the energy companies, with your support, are able to retain their employees more.</tw-passagedata><tw-passagedata pid="25" name=" Science2" tags="" position="559,1678" size="100,100">You picked the stance on climate change that stresses climate change, despite economic hardship in your country. The public is skeptical about regulation in general at this moment, and this announcement does not bode well with the public. Both the public and your key supporters think you are being too idealistic and putting climate change ahead at the expense of the country’s constituents’ well-beings.
+
+Public Support -15, Economy -5, Climate Score +2
+(set: $economy_score2 to $economy_score2 - 5)
+(set: $climate_score2 to $climate_score2 + 2)
+(set: $public_support to $public_support - 15)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+[[Decision Three]]</tw-passagedata><tw-passagedata pid="26" name=" Centrist2" tags="" position="709,1678" size="100,100">You picked the stance on climate change that pays attention to the immediate economic problem at hand. The public is desperate for the country to go back to what it was, and you determine that right now is a poor time to advance climate change. The public takes your announcement well, but your key supporters are upset you did not take this opportunity to deregulate further and invest in energy.
+
+Public Support +5, Economy -2, Climate Score -2
+(set: $economy_score2 to $economy_score2 - 2)
+(set: $climate_score2 to $climate_score2 - 2)
+(set: $public_support to $public_support + 5)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+[[Decision Three]]
+</tw-passagedata><tw-passagedata pid="27" name=" Economy2" tags="" position="859,1678" size="100,100">You picked the stance on climate change that pays absolute attention to the economic problem at hand. You fear that if you do not do something now, this recession could permanently damage the nation, and you think to yourself: What use will our voice on climate change be if we become economically disadvantaged in relation to the rest of the world? Both the general public and your key supporters approve of your decision, but your country’s scientists and college students, albeit a small fraction of the population, disapprove of the fact that you sneakily deregulated the energy industry.
+
+Public Support +10, Economy +1, Climate Score -5
+(set: $economy_score2 to $economy_score2 + 1)
+(set: $climate_score2 to $climate_score2 - 2)
+(set: $public_support to $public_support + 10)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+[[Decision Three]]</tw-passagedata><tw-passagedata pid="28" name="Decision Three" tags="" position="704,1858" size="100,100">It’s been a year since you’ve been elected as leader, and now you are well accustomed to your political position. The country’s status has been stagnant recently, and the fact that your position in government is in a lame duck phase. However, one day you receive an international warning from other countries: if you do not follow through and cooperate with their international efforts against limiting carbon dioxide emissions, the pact of countries associated with it threaten to put trade restrictions on your country, which will cause its economy to plummet into depression.  What do you do?
+
+[[Science -&gt; Science3]] - You place too much importance on the country’s economy and you decide that your country would rather swallow its pride and conform to international pressure rather than isolate itself politically on the international stage and fall into depression. You agree to the international requirements set for the carbon dioxide emissions.
+
+[[Centrist -&gt; Centrist3]] - You realize the importance of the threats made by the other countries, but you realize that bending to such public pressure so easily, without any pushback, will make you look like a pushover. You decide that you will try to negotiate with them, and hopefully save face on both fronts. Unfortunately, this does not work well as the other countries have too much leverage as your trade partners, and you only receive small amounts of monetary investment in your country in exchange for agreeing to comply with regulations.
+
+[[Economy -&gt; Economy3]] - Despite how serious these threats are, you, as the proud leader of your country, want to maintain the image of your country and your people as people that cannot be bullied into submission. You also realize that this threat is very unprecedented and hostile, and has no place in international politics. You refuse to negotiate or even respond. After all, if it&#39;s between cutting off international trade or regulating the core industry of your country, you might as well choose the one that doesn’t come with humiliation. </tw-passagedata><tw-passagedata pid="29" name=" Science3" tags="" position="554,2008" size="100,100">Your key supporters are mad, as they think of you as a coward that let outside countries influence the energy industry’s affairs. On the other hand, your constituents also think lowly of you too because they think this decision jeopardizes the independence and pride of the country. Regardless, your country’s economy survives, and maybe in the future you’ll get credit for it.
+
+Public Support -20, Economy +1, Climate Score +5
+(set: $economy_score2 to $economy_score2 + 1)
+(set: $climate_score2 to $climate_score2 + 5)
+(set: $public_support to $public_support - 20)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+(if: $public_support &gt; 59)[Congragulations due to your high $public_support score you have unlocked a secret path. Proceed to [[Hidden Decision Four]].]
+
+(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="30" name=" Centrist3" tags="" position="704,2008" size="100,100">Thankfully, your economy does not take a nosedive, given that at the end of the day there are no trade restrictions. However, everything else becomes worse. Your key supporters are mad because of the new regulations, and your constituents think of you as a pushover as your negotiations have gone unfavorably. The energy industry takes a hit, putting the country in a small recession.
+
+Public Support -10, Economy -1, Climate Score +2
+
+(set: $economy_score2 to $economy_score2 - 1)
+(set: $climate_score2 to $climate_score2 + 2)
+(set: $public_support to $public_support - 10)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+(if: $public_support &gt; 59)[Congragulations due to your high $public_support score you have unlocked a secret path. Proceed to [[Hidden Decision Four]].]
+
+(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="31" name=" Economy3" tags="" position="854,2008" size="100,100">Your decision to completely disregard the threats made by foreign countries sort of works. The threats made by the international community and its tone was mostly a front, with all bark with no bite. These countries value your trade benefits too, and do not fully embargo you, only putting temporary trade tariffs and quotas on your country to send a message. Your key supporters and constituents both approve of your decision to protect your country, giving you both financial and political support that allow you to easily pass laws later to help semi-comply with international carbon emission regulations to ease international tensions.
+
+Public Support +15, Economy -2, Climate Score +2
+(set: $economy_score2 to $economy_score2 - 2)
+(set: $climate_score2 to $climate_score2 + 2)
+(set: $public_support to $public_support + 15)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+(if: $public_support &gt; 59)[Congragulations due to your high $public_support score you have unlocked a secret path. Proceed to [[Hidden Decision Four]].]
+
+(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="32" name="Hidden Decision Four" tags="" position="491,2231" size="100,100">With your track record of making level-headed decisions, you have earned a lot of public support as a leader. People praise your leadership, and your key supporters praise your practicality. You have enough public support as a leader that you right now have the ability to make a really impactful decision, as your country trusts you fully. You have the choice to make some serious progress against climate change, at the potential risk of your future legacy as a leader. What do you do?
+
+[[Progress]] - You want to do what you think is right, and sway the public into supporting climate change efforts. You plan on putting efficient regulations on the energy industry, but you also know doing this would risk your standing with the most important part of your supporters: the key supporters such as oil executives, the elite, and the bureaucrats. 
+
+[[Legacy]] - You want to do what you think is right, but you fear that by turning your back on the country’s elite, your future legacy that will shape your leadership into the country’s history will be damaged. Wanting to stay in this blissful state forever, you’d rather not do anything to jeopardize. Instead, you tell yourself that you will work on other policies instead to compensate.</tw-passagedata><tw-passagedata pid="33" name="Decision Five" tags="" position="862,2385" size="100,100">Your leadership term is now coming to an end, and before you retire as leader, you are to make a speech to the country, and ultimately the world. You can choose from many things to talk about, but know that your message, as the leader of your country, will deeply impact the tone and the direction of your country’s future. What do you do?
+
+(if: $slippery_slope is true)[
+
+Science - Regardless of the decisions you have made in the past, you know what’s right and know that climate change, if it remains unchecked, will indubitably be the Earth’s next catastrophe. Before it’s too late, you decide you are going to be the first leader in your country’s history to address the serious issue of climate change and the government-energy industry complex.
+
+[[False Speech]] (ha, wish slippery slope hadn&#39;t been activated?) - You want to end your leadership with a bang, a meaningful message for the rest of humanity, but you have this instilled fear in you that if you do anything that may face your key supporters’ disapproval, it is bad. You know that this is not true, and making a progressive speech against climate change is the right decision, but you do not carry this out. You instead make a blanket speech, similar to what every other ordinary leader before you has made.
+]
+
+(if: $slippery_slope is false)[
+
+[[Science -&gt; Science5]] - Regardless of the decisions you have made in the past, you know what’s right and know that climate change, if it remains unchecked, will indubitably be the Earth’s next catastrophe. Before it’s too late, you decide you are going to be the first leader in your country’s history to address the serious issue of climate change and the government-energy industry complex.
+
+[[False Speech]] - You want to end your leadership with a bang, a meaningful message for the rest of humanity, but you have this instilled fear in you that if you do anything that may face your key supporters’ disapproval, it is bad. You know that this is not true, and making a progressive speech against climate change is the right decision, but you do not carry this out. You instead make a blanket speech, similar to what every other ordinary leader before you has made.
+
+]</tw-passagedata><tw-passagedata pid="34" name="Progress" tags="" position="491,2424" size="100,100">You make significant strides in reducing carbon emissions, potentially making a difference in the climate of the world. The international community applaud your efforts in circumventing climate change, and the public are indifferent, as the efficient regulations have not impacted their well-being much. However, your key supporters, who have once trusted you, feel betrayed as you have turned your backs on them, and they, as the elite, fund an information campaign to discredit you. This does not impact you in the moment, but you know when history books will get written, your legacy will become tainted. However, this does not matter to you, as you know yourself that you’ve done good for the world.
+
+Public Support 0, Economy 0, Climate Score +15
+(set: $economy_score2 to $economy_score2 + 0)
+(set: $climate_score2 to $climate_score2 + 15)
+(set: $public_support to $public_support + 0)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="35" name="Legacy" tags="" position="636,2269" size="100,100">You make no changes to energy industry regulations, and you maintain your public image as well as your image with your key supporters. That’s it. Nothing in the world actually improved from your decision. Self-serving mentality is great, isn’t it?
+
+Public Support 0, Economy 0, Climate Score -1, SLIPPERY SLOPE: ON (Uh oh, you are probably wondering what this is going to do aren&#39;t you?)
+(set: $economy_score2 to $economy_score2 + 0)
+(set: $climate_score2 to $climate_score2 - 1)
+(set: $public_support to $public_support + 0)
+(set: $slippery_slope to true)
+
+&lt;b&gt;Scoreboard After&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="36" name="False Speech" tags="" position="862,2535" size="100,100">Your speech is very moderate and toned down. The public’s immediate reaction isn’t so bad, but in the future you will be known as a stagnant leadership who just ran a successful campaign, nothing else. Your incessant worry about yourself and your political status stopped you from acting in the right, and now you will carry this guilty conscience forward for the rest of your life.
+
+Public Support 0, Economy 0, Climate Score -5
+(set: $economy_score2 to $economy_score2 + 0)
+(set: $climate_score2 to $climate_score2 - 5)
+(set: $public_support to $public_support + 0)
+
+&lt;b&gt;Final Scoreboard&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+Continue to the [[Third Character]]</tw-passagedata><tw-passagedata pid="37" name=" Science5" tags="" position="982,2535" size="100,100">The public hears and takes your speech well. They know that the country relies on the energy industry too much, in detriment of both climate change and as well economic diversity. The speech sways them a significant amount, and now, as a result, the next election’s winner will be dictated by the next leader who is the most outspoken about climate change. With this speech, you know you made change.
+
+Public Support +10, Economy 0, Climate Score +5
+(set: $economy_score2 to $economy_score2 + 0)
+(set: $climate_score2 to $climate_score2 + 5)
+(set: $public_support to $public_support + 10)
+
+&lt;b&gt;Final Scoreboard&lt;/b&gt;
+Economy Score: $economy_score2
+Climate Score: $climate_score2
+Public Support: $public_support
+
+Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" name="Third Character" tags="" position="909,2767" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
