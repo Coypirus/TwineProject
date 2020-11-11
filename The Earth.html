@@ -200,7 +200,7 @@ Public Support: $public_support
 
 [[Centrist -&gt; Centrist3]] - You realize the importance of the threats made by the other countries, but you realize that bending to such public pressure so easily, without any pushback, will make you look like a pushover. You decide that you will try to negotiate with them, and hopefully save face on both fronts. Unfortunately, this does not work well as the other countries have too much leverage as your trade partners, and you only receive small amounts of monetary investment in your country in exchange for agreeing to comply with regulations.
 
-[[Economy -&gt; Economy3]] - Despite how serious these threats are, you, as the proud leader of your country, want to maintain the image of your country and your people as people that cannot be bullied into submission. You also realize that this threat is very unprecedented and hostile, and has no place in international politics. You refuse to negotiate or even respond. After all, if it&#39;s between cutting off international trade or regulating the core industry of your country, you might as well choose the one that doesn’t come with humiliation. </tw-passagedata><tw-passagedata pid="29" name=" Science3" tags="" position="554,2008" size="100,100">Your key supporters are mad, as they think of you as a coward that let outside countries influence the energy industry’s affairs. On the other hand, your constituents also think lowly of you too because they think this decision jeopardizes the independence and pride of the country. Regardless, your country’s economy survives, and maybe in the future you’ll get credit for it.
+[[Economy -&gt; Economy3]] - Despite how serious these threats are, you, as the proud leader of your country, want to maintain the image of your country and your people as people that cannot be bullied into submission. You also realize that this threat is very unprecedented and hostile, and has no place in international politics. You refuse to negotiate or even respond. After all, if it&#39;s between cutting off international trade or regulating the core industry of your country, you might as well choose the one that doesn’t come with humiliation. </tw-passagedata><tw-passagedata pid="29" name=" Science3" tags="" position="549,2002" size="100,100">Your key supporters are mad, as they think of you as a coward that let outside countries influence the energy industry’s affairs. On the other hand, your constituents also think lowly of you too because they think this decision jeopardizes the independence and pride of the country. Regardless, your country’s economy survives, and maybe in the future you’ll get credit for it.
 
 Public Support -20, Economy +1, Climate Score +5
 (set: $economy_score2 to $economy_score2 + 1)
@@ -214,7 +214,7 @@ Public Support: $public_support
 
 (if: $public_support &gt; 59)[Congragulations due to your high $public_support score you have unlocked a secret path. Proceed to [[Hidden Decision Four]].]
 
-(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="30" name=" Centrist3" tags="" position="704,2008" size="100,100">Thankfully, your economy does not take a nosedive, given that at the end of the day there are no trade restrictions. However, everything else becomes worse. Your key supporters are mad because of the new regulations, and your constituents think of you as a pushover as your negotiations have gone unfavorably. The energy industry takes a hit, putting the country in a small recession.
+(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. [[Next. |Decision Five]]] </tw-passagedata><tw-passagedata pid="30" name=" Centrist3" tags="" position="704,2008" size="100,100">Thankfully, your economy does not take a nosedive, given that at the end of the day there are no trade restrictions. However, everything else becomes worse. Your key supporters are mad because of the new regulations, and your constituents think of you as a pushover as your negotiations have gone unfavorably. The energy industry takes a hit, putting the country in a small recession.
 
 Public Support -10, Economy -1, Climate Score +2
 
@@ -247,7 +247,14 @@ Public Support: $public_support
 
 [[Progress]] - You want to do what you think is right, and sway the public into supporting climate change efforts. You plan on putting efficient regulations on the energy industry, but you also know doing this would risk your standing with the most important part of your supporters: the key supporters such as oil executives, the elite, and the bureaucrats. 
 
-[[Legacy]] - You want to do what you think is right, but you fear that by turning your back on the country’s elite, your future legacy that will shape your leadership into the country’s history will be damaged. Wanting to stay in this blissful state forever, you’d rather not do anything to jeopardize. Instead, you tell yourself that you will work on other policies instead to compensate.</tw-passagedata><tw-passagedata pid="33" name="Decision Five" tags="" position="862,2385" size="100,100">Your leadership term is now coming to an end, and before you retire as leader, you are to make a speech to the country, and ultimately the world. You can choose from many things to talk about, but know that your message, as the leader of your country, will deeply impact the tone and the direction of your country’s future. What do you do?
+[[Legacy]] - You want to do what you think is right, but you fear that by turning your back on the country’s elite, your future legacy that will shape your leadership into the country’s history will be damaged. Wanting to stay in this blissful state forever, you’d rather not do anything to jeopardize. Instead, you tell yourself that you will work on other policies instead to compensate.</tw-passagedata><tw-passagedata pid="33" name="Decision Five" tags="" position="856,2310" size="100,100">(if: $public_support &lt; 0)[
+You lost all of your public support. You could no longer remain in office. 
+
+Continue to the [[Third Character]] 
+]
+
+(if: $public_support &gt;= 0)[
+Your leadership term is now coming to an end, and before you retire as leader, you are to make a speech to the country, and ultimately the world. You can choose from many things to talk about, but know that your message, as the leader of your country, will deeply impact the tone and the direction of your country’s future. What do you do?
 
 (if: $slippery_slope is true)[
 
@@ -262,6 +269,7 @@ Public Support: $public_support
 
 [[False Speech]] - You want to end your leadership with a bang, a meaningful message for the rest of humanity, but you have this instilled fear in you that if you do anything that may face your key supporters’ disapproval, it is bad. You know that this is not true, and making a progressive speech against climate change is the right decision, but you do not carry this out. You instead make a blanket speech, similar to what every other ordinary leader before you has made.
 
+]
 ]</tw-passagedata><tw-passagedata pid="34" name="Progress" tags="" position="491,2424" size="100,100">You make significant strides in reducing carbon emissions, potentially making a difference in the climate of the world. The international community applaud your efforts in circumventing climate change, and the public are indifferent, as the efficient regulations have not impacted their well-being much. However, your key supporters, who have once trusted you, feel betrayed as you have turned your backs on them, and they, as the elite, fund an information campaign to discredit you. This does not impact you in the moment, but you know when history books will get written, your legacy will become tainted. However, this does not matter to you, as you know yourself that you’ve done good for the world.
 
 Public Support 0, Economy 0, Climate Score +15
@@ -274,7 +282,7 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="35" name="Legacy" tags="" position="636,2269" size="100,100">You make no changes to energy industry regulations, and you maintain your public image as well as your image with your key supporters. That’s it. Nothing in the world actually improved from your decision. Self-serving mentality is great, isn’t it?
+Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="35" name="Legacy" tags="" position="665,2272" size="100,100">You make no changes to energy industry regulations, and you maintain your public image as well as your image with your key supporters. That’s it. Nothing in the world actually improved from your decision. Self-serving mentality is great, isn’t it?
 
 Public Support 0, Economy 0, Climate Score -1, SLIPPERY SLOPE: ON (Uh oh, you are probably wondering what this is going to do aren&#39;t you?)
 (set: $economy_score2 to $economy_score2 + 0)
@@ -287,7 +295,7 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="36" name="False Speech" tags="" position="862,2535" size="100,100">Your speech is very moderate and toned down. The public’s immediate reaction isn’t so bad, but in the future you will be known as a stagnant leadership who just ran a successful campaign, nothing else. Your incessant worry about yourself and your political status stopped you from acting in the right, and now you will carry this guilty conscience forward for the rest of your life.
+Continue to [[Decision Five]] </tw-passagedata><tw-passagedata pid="36" name="False Speech" tags="" position="801,2502" size="100,100">Your speech is very moderate and toned down. The public’s immediate reaction isn’t so bad, but in the future you will be known as a stagnant leadership who just ran a successful campaign, nothing else. Your incessant worry about yourself and your political status stopped you from acting in the right, and now you will carry this guilty conscience forward for the rest of your life.
 
 Public Support 0, Economy 0, Climate Score -5
 (set: $economy_score2 to $economy_score2 + 0)
@@ -299,7 +307,7 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-Continue to the [[Third Character]]</tw-passagedata><tw-passagedata pid="37" name=" Science5" tags="" position="982,2535" size="100,100">The public hears and takes your speech well. They know that the country relies on the energy industry too much, in detriment of both climate change and as well economic diversity. The speech sways them a significant amount, and now, as a result, the next election’s winner will be dictated by the next leader who is the most outspoken about climate change. With this speech, you know you made change.
+Continue to the [[Third Character]]</tw-passagedata><tw-passagedata pid="37" name=" Science5" tags="" position="999,2504" size="100,100">The public hears and takes your speech well. They know that the country relies on the energy industry too much, in detriment of both climate change and as well economic diversity. The speech sways them a significant amount, and now, as a result, the next election’s winner will be dictated by the next leader who is the most outspoken about climate change. With this speech, you know you made change.
 
 Public Support +10, Economy 0, Climate Score +5
 (set: $economy_score2 to $economy_score2 + 0)
@@ -311,7 +319,7 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" name="Third Character" tags="" position="909,2767" size="100,100"></tw-passagedata></tw-storydata>
+Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" name="Third Character" tags="" position="899,2700" size="100,100"></tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
