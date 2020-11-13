@@ -176,9 +176,9 @@ Good job! You have earned 3 more economy points
 (set: $q_remaining to $q_remaining - 1)\
 
 
-(if: $q_remaining is 0)[Go to the [[End]]]\
+(if: $q_remaining is 0)[Go to the [[Person 1 Ending]]]\
 (if: $q_remaining is not 0)[Which topic would you like to discuss next, [[government accountability]] or [[climate change]]?]\
-</tw-passagedata><tw-passagedata pid="8" name="End" tags="Article" position="845,550" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online. 
+</tw-passagedata><tw-passagedata pid="8" name="Person 1 Ending" tags="Article" position="845,550" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online. 
 Do you choose to write an [[opinion piece]], [[objective summary]], or an [[analysis piece]]?</tw-passagedata><tw-passagedata pid="9" name=" inquire further" tags="Government" position="313,249" size="100,100">Despite pushing the candidate further on the issue you receive no further response than &quot;I trust the people around me. I have nothing more to say on the topic.&quot;
 
 While you do not manage to get anything from him, his denial shifts public opinion, and an investigation begins. Eventually, it is discovered that several officials have been bribed to funnel resources away from renewable energy and into subsidies for big oil.
@@ -194,7 +194,7 @@ Good job! You have earned 4 economy points and 3 climate points
 
 
 (if: $q_remaining is not 0)[Would you like to ask about [[the economy]] or [[climate change]] next?]\
-(if: $q_remaining is 0)[Go to the [[End]].]</tw-passagedata><tw-passagedata pid="11" name=" inquire furtherC" tags="Ice" position="611,348" size="100,100">&quot;My administration believes in the facts, and we are giong to invest in clean energy prouction, which is giong to be increasingly important. Clean coal, nuclear energy, solar energy, and more.&quot;
+(if: $q_remaining is 0)[Go to the [[Person 1 Ending]].]</tw-passagedata><tw-passagedata pid="11" name=" inquire furtherC" tags="Ice" position="611,348" size="100,100">&quot;My administration believes in the facts, and we are giong to invest in clean energy prouction, which is giong to be increasingly important. Clean coal, nuclear energy, solar energy, and more.&quot;
 
 You have earned 3 more economy points!
 
@@ -206,7 +206,7 @@ You have earned 3 more economy points!
 
 
 (if: $q_remaining is not 0)[What would you like to learn about next, [[the economy]] or [[government accountability]]?]\
-(if: $q_remaining is 0)[Go to the [[End]]]</tw-passagedata><tw-passagedata pid="13" name="opinion piece" tags="Article" position="687,710" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
+(if: $q_remaining is 0)[Go to the [[Person 1 Ending]]]</tw-passagedata><tw-passagedata pid="13" name="opinion piece" tags="Article" position="687,710" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
 [[Add 5 points to your economy score -&gt; economy score end]] or [[add 5 points to your climate score -&gt; climate score end]]</tw-passagedata><tw-passagedata pid="14" name="objective summary" tags="Article" position="857,742" size="100,100">You decide that getting the information out is more important than your personal subjective opinion, so you write an objective summary of the night.
 
 3 points have been added to both your economy score and climate score
@@ -459,7 +459,7 @@ Continue to the [[Third Character]] </tw-passagedata><tw-passagedata pid="38" na
 
 Go to [[work |Decision 1]]
 
-(set: $company_revenue to 1000000000)
+(set: $company_revenue to 100)
 (set: $green_level to 5)</tw-passagedata><tw-passagedata pid="39" name="Decision 1" tags="Coal4" position="700,2799" size="100,100">Your company is interested in developing more coal factories across the midwest united states, an area that has been largely uncharted by competitors. Do you agree with your subordinates suggestions to start building factories in the midwest or do you reject their proposals and instead start investing in costly wind mills in the area instead. 
 
 [[Invest in coal |Coal]]
@@ -475,7 +475,7 @@ Do you continue to build more coal plants or do you instead heed the advice of y
 
 [[Build more coal plants |More Coal]]
 [[Invest in electrostatic filters|Electrostatic Filters]]
-(set: $company_revenue to $company_revenue * 1.1)\
+(set: $company_revenue to $company_revenue + 20)\
 (set: $green_level to $green_level - 1)\
 
 &lt;b&gt;Scoreboard&lt;/b&gt;
@@ -488,7 +488,7 @@ Do you continue to build more wind mills, stop building and researching more ren
 [[Research]]
 [[Backtrack]]
 
-(set: $company_revenue to $company_revenue * 0.9)\
+(set: $company_revenue to $company_revenue - 10)\
 (set: $green_level to $green_level + 1)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
@@ -497,7 +497,7 @@ Green level: $green_level
 
 [[Continue |Decision 3]]
 
-(Set: $company_revenue to $company_revenue * 1.1)\
+(Set: $company_revenue to $company_revenue + 10)\
 (Set: $green_level to $green_level - 2)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
@@ -505,32 +505,38 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="43" name="Electro
 
 [[Continue |Decision 3]]
 
-(Set: $company_revenue to $company_revenue * 0.9)\
+(Set: $company_revenue to $company_revenue - 10)\
 (Set: $green_level to $green_level + 2)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
-Green level: $green_level</tw-passagedata><tw-passagedata pid="44" name="Decision 3" tags="Coal3" position="698,3298" size="100,100">(If: $company_revenue &lt; 900000000)[
+Green level: $green_level</tw-passagedata><tw-passagedata pid="44" name="Decision 3" tags="Coal3" position="698,3298" size="100,100">(If: $company_revenue &lt; 100)[
 Upper level executives are not happy with how the company is performing.
 
 You lost control of the company. Upper level executives implemented a new fossil fuel initiative. Your lead scientists, however, gave you the option to go behind their back and begin allocating funding to to develop nuclear energy. Would you accept the option? 
 
 [[Go behind]]
 [[Reject the offer]]
+
+(Set: $boss_happy to false)
 ]\
-(If: $company_revenue &gt; 900000000)[
+(If: $company_revenue &gt; 100)[
 Upper level executives are happy with how the company is performing. They let you be and allow you to make a choice on whether or not you are allowed to start a solar energy division in the company or continue investing in coal.
 
 [[Invest in more coal | Even More Coal]]
 [[Choose solar energy division | Solar Energy Division]]
+
+(Set: $boss_happy to true)
 ]\
 
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
-Green level: $green_level</tw-passagedata><tw-passagedata pid="45" name="More windmills" tags="Wind" position="842,3100" size="100,100">You choose building more windmills.
+Green level: $green_level
+
+(Set: $solar_energy to false)\</tw-passagedata><tw-passagedata pid="45" name="More windmills" tags="Wind" position="842,3100" size="100,100">You choose building more windmills.
 
 [[Continue |Decision 3]]
 
-(Set: $company_revenue to $company_revenue * 0.9)\
+(Set: $company_revenue to $company_revenue - 10)\
 (Set: $green_level to $green_level + 1)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
@@ -538,7 +544,7 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="46" name="Researc
 
 [[Continue |Decision 3]]
 
-(Set: $company_revenue to $company_revenue * 0.9)\
+(Set: $company_revenue to $company_revenue - 5)\
 (Set: $green_level to $green_level + 1)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
@@ -546,17 +552,19 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="47" name="Backtra
 
 [[Continue |Decision 3]]
 
-(Set: $company_revenue to $company_revenue * 0.9)\
+(Set: $company_revenue to $company_revenue - 5)\
 (Set: $green_level to $green_level - 1)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
-Green level: $green_level</tw-passagedata><tw-passagedata pid="48" name="Go behind" tags="Renewable2" position="473,3448" size="100,100">[[Continue |Decision 4]]
+Green level: $green_level</tw-passagedata><tw-passagedata pid="48" name="Go behind" tags="Renewable2" position="473,3448" size="100,100">You decided to go behind. 
 
-(Set: $company_revenue to $company_revenue * 0.9)\
+[[Continue |Go Behind 2]]
+
+(Set: $company_revenue to $company_revenue - 5)\
 (Set: $green_level to $green_level + 2)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
-Green level: $green_level</tw-passagedata><tw-passagedata pid="49" name="Reject the offer" tags="Coal" position="623,3448" size="100,100">??
+Green level: $green_level</tw-passagedata><tw-passagedata pid="49" name="Reject the offer" tags="Coal" position="621,3448" size="100,100">??
 
 [[Continue |Decision 4]]
 
@@ -566,19 +574,60 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="50" name=" Even M
 
 [[Continue |Decision 4]]
 
-(Set: $company_revenue to $company_revenue * 1.1)\
+(Set: $company_revenue to $company_revenue + 20)\
 (Set: $green_level to $green_level - 1)\
+
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
 Green level: $green_level</tw-passagedata><tw-passagedata pid="51" name=" Solar Energy Division" tags="Renewable" position="923,3448" size="100,100">You chose to start a solar engergy divison. 
 
 [[Continue |Decision 4]]
 
-(Set: $company_revenue to $company_revenue * 0.9)\
-(Set: $green_level to $green_level - 2)\
+(Set: $company_revenue to $company_revenue - 10)\
+(Set: $green_level to $green_level + 2)\
+(Set: $solar_energy to true)\
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
-Green level: $green_level</tw-passagedata><tw-passagedata pid="52" name="Decision 4" tags="" position="700,3597" size="100,100">Decision 4</tw-passagedata></tw-storydata>
+Green level: $green_level</tw-passagedata><tw-passagedata pid="52" name="Decision 4" tags="Coal2" position="760,3600" size="100,100">Do you continue to [[keep funding the development|Keep Funding]] of this or do you [[build more coal factories|More Factories]] in the midWest?</tw-passagedata><tw-passagedata pid="53" name="Go Behind 2" tags="Renewable2" position="473,3598" size="100,100">You decided earlier to go behind your bosses back. Your lead scientists have begun to let you know that progress on the nuclear energy facilities are beginning and are asking you if it’s possible to allocate them more money to improve the efficiency of the construction and the overall effectiveness of the facilities. 
+
+[[Allocate more money for construction |More Money]]
+[[Not to allocate more money for construction |No Money]]
+[[Develop coal|More Factories]]</tw-passagedata><tw-passagedata pid="54" name="More Money" tags="Renewable" position="309,3746" size="100,100">You decided to allocate more money for construction. Soon, the CFO discovered your secretive plot, you’re fired immediately, and you’re replaced by someone who doesn’t care at all about being environmentally friendly.
+
+[[Continue |Person 3 Ending]]
+
+(Set: $green_level to 0)
+(Set: $company_revenue to $company_revenue + 100)
+</tw-passagedata><tw-passagedata pid="55" name="No Money" tags="" position="478,3745" size="100,100">You are afraid that your secret plot will be discovered, so you reject the offer. 
+
+[[Continue |Person 3 Ending]]
+
+(Set: $company_revenue to $company_revenue + 10)
+(Set: $green_level to $green_level + 1)</tw-passagedata><tw-passagedata pid="56" name="Keep Funding" tags="Coal2" position="874,3743" size="100,100">You further funded the development of the solar division.
+
+[[Continue |Person 3 Ending]]
+
+(Set: $green_level to $green_level + 2)\
+(Set: $company_revenue to $company_revenue + 10)\</tw-passagedata><tw-passagedata pid="57" name="More Factories" tags="Coal3" position="667,3743" size="100,100">You decided to develop more coal to make you boss happy. 
+
+[[Continue |Person 3 Ending]]
+
+(Set: $green_level to $green_level - 2)\
+(Set: $company_revenue to $company_revenue + 20)\</tw-passagedata><tw-passagedata pid="58" name="Person 3 Ending" tags="Coal3" position="570,3900" size="100,100">4 months into your career as a high-level executive of a fossil fuel company, an article from the financial magazine frobes comes out. In it, frobes ranks companies based on not only a company’s profit wise but their efforts to be more green. Because your company is an energy company, frobes ranks you based on its profitability in combination with its efforts to have more renewable energy sectors. Your company’s ranking in this article is very important as it can affect share prices, which in turn can affect the longevity of the company and the company’s shareholders’ confidence within the executive team and whether or not you and your coworkers will be allowed to remain at the company.
+
+(If: $green_level &lt; 0)[
+Your frobes ranking is very low since your green level is too low. Your profitability doesn’t matter and frobes ranks your company very low. Your share price tanks, profits go down the roof, and your company decides to layoff thousands including yourself. 
+]\
+(If: $green_level &lt;= 3 and $company_revenue &gt;= 125)[
+Your company ranks decently. You’re allowed to keep your job and the company performs ok.
+]\
+(If: $green_level &gt;= 5 and $company_revenue &gt;= 100 and $green_level &lt; 7)[
+Tour company ranks very highly. Your share prices increase. You get a bonus and your bosses are happy with you.
+]\
+(If: $green_level &gt;= 7 and $company_revenue &lt; 100)[
+Your company ranks moderately, your share prices are stable, but your bosses are not happy that profits are low and you get demoted. 
+]\
+[[The End]]</tw-passagedata><tw-passagedata pid="59" name="The End" tags="" position="570,4050" size="100,100">The End</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
