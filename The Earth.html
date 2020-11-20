@@ -127,7 +127,13 @@ tw-story[tags~="Speech"] {
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="Earth" position="100,200" size="100,100">&#39;&#39;This is a battle to save the World.&#39;&#39;
-[[Let&#39;s Begin!|Person 1]]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article" position="800,744" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
+|intro)[(t8n: &quot;dissolve&quot;)[
+A crisis on the Earth!  Climate change remains an unsolved problem slowly ruining our environments and triggering natural disasters. In this game, you will take control of three intrepid souls from different walks of life, who want to do their part in preventing climate change.
+
+[[Let&#39;s Begin!|Person 1]]
+]]
+
+(click: &quot;save the World&quot;)[(show: ?intro)]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article" position="800,744" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
 
 You choose to focus your piece on either the (link: &quot;economy&quot;)[\
 	(set: $economy_score to it + 2)\
