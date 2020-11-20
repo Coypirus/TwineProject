@@ -24,7 +24,7 @@ tw-story[tags~="Coal"] {
 }
 
 tw-story[tags~="Coal2"] {
- background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/edf_cottam_coal_power_plant_closures_UK_XL_721_420_80_s_c1.jpg");
+ background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/edf_cottam_coal_power_plant_closures_UK_XL_721_420_80_s_c1.jpg");
  background-size:cover;
 }
 
@@ -59,7 +59,7 @@ tw-story[tags~="Renewable2"] {
 }
 
 tw-story[tags~="School"] {
- background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://iblnews.org/wp-content/uploads/2020/03/severaluniversities.jpg");
+ background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://soa.princeton.edu/sites/default/files/styles/gallery_open/public/princeton-lg-v2.jpg?itok=yahLgope");
  background-size:cover;
 }
 
@@ -94,7 +94,7 @@ tw-story[tags~="Article2"] {
 }
 
 tw-story[tags~="Politics"] {
- background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://cdn.cnn.com/cnnnext/dam/assets/170425141811-0425-trump-geopolitics-america-first-large-tease.jpg");
+ background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://www.shoutoutuk.org/wp-content/uploads/2018/01/Depositphotos_66526449_m-2015-e1515704333861.jpg");
  background-size:cover;
 }
 
@@ -123,6 +123,10 @@ tw-story[tags~="Speech"] {
  background-size:cover;
 }
 
+tw-passage{
+  -webkit-text-stroke: 0.1px black;
+}
+
 
 
 
@@ -133,7 +137,7 @@ A crisis on the Earth!  Climate change remains an unsolved problem slowly ruinin
 [[Let&#39;s Begin!|Person 1]]
 ]]
 
-(click: &quot;save the World&quot;)[(show: ?intro)]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article" position="800,744" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
+(click: &quot;save the World&quot;)[(show: ?intro)]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article2" position="800,744" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
 
 You choose to focus your piece on either the (link: &quot;economy&quot;)[\
 	(set: $economy_score to it + 2)\
@@ -191,7 +195,7 @@ Climate Score: $climate_score2
 Public Support: $public_support
 
 [[Decision Two]] 
-</tw-passagedata><tw-passagedata pid="8" name="Economy" tags="" position="869,1354" size="100,100">You picked the stance on climate change that stresses the economy of your country before anything. Your key supporters, oil executives and energy contractors, approve your decision, but your bottom line of the middle class fall out, as they think this decision is dishonest and in violation of your centrist political agenda you advertised during your campaign.
+</tw-passagedata><tw-passagedata pid="8" name="Economy" tags="Economy" position="869,1354" size="100,100">You picked the stance on climate change that stresses the economy of your country before anything. Your key supporters, oil executives and energy contractors, approve your decision, but your bottom line of the middle class fall out, as they think this decision is dishonest and in violation of your centrist political agenda you advertised during your campaign.
 
 Public Support -15, Economy +3, Climate Score -5
 
@@ -235,7 +239,7 @@ Climate Score: $climate_score2
 Public Support: $public_support
 
 [[Decision Three]]
-</tw-passagedata><tw-passagedata pid="12" name=" Economy2" tags="" position="859,1678" size="100,100">You picked the stance on climate change that pays absolute attention to the economic problem at hand. You fear that if you do not do something now, this recession could permanently damage the nation, and you think to yourself: What use will our voice on climate change be if we become economically disadvantaged in relation to the rest of the world? Both the general public and your key supporters approve of your decision, but your country’s scientists and college students, albeit a small fraction of the population, disapprove of the fact that you sneakily deregulated the energy industry.
+</tw-passagedata><tw-passagedata pid="12" name=" Economy2" tags="Economy" position="859,1678" size="100,100">You picked the stance on climate change that pays absolute attention to the economic problem at hand. You fear that if you do not do something now, this recession could permanently damage the nation, and you think to yourself: What use will our voice on climate change be if we become economically disadvantaged in relation to the rest of the world? Both the general public and your key supporters approve of your decision, but your country’s scientists and college students, albeit a small fraction of the population, disapprove of the fact that you sneakily deregulated the energy industry.
 
 Public Support +10, Economy +1, Climate Score -5
 (set: $economy_score2 to $economy_score2 + 1)\
@@ -247,7 +251,7 @@ Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-[[Decision Three]]</tw-passagedata><tw-passagedata pid="13" name="Decision Three" tags="" position="704,1858" size="100,100">It’s been a year since you’ve been elected as leader, and now you are well accustomed to your political position. The country’s status has been stagnant recently, and the fact that your position in government is in a lame duck phase. However, one day you receive an international warning from other countries: if you do not follow through and cooperate with their international efforts against limiting carbon dioxide emissions, the pact of countries associated with it threaten to put trade restrictions on your country, which will cause its economy to plummet into depression.  What do you do?
+[[Decision Three]]</tw-passagedata><tw-passagedata pid="13" name="Decision Three" tags="Politics" position="704,1858" size="100,100">It’s been a year since you’ve been elected as leader, and now you are well accustomed to your political position. The country’s status has been stagnant recently, and the fact that your position in government is in a lame duck phase. However, one day you receive an international warning from other countries: if you do not follow through and cooperate with their international efforts against limiting carbon dioxide emissions, the pact of countries associated with it threaten to put trade restrictions on your country, which will cause its economy to plummet into depression.  What do you do?
 
 [[Science -&gt; Science3]] - You place too much importance on the country’s economy and you decide that your country would rather swallow its pride and conform to international pressure rather than isolate itself politically on the international stage and fall into depression. You agree to the international requirements set for the carbon dioxide emissions.
 
@@ -281,7 +285,7 @@ Public Support: $public_support
 
 (if: $public_support &gt; 59)[Congragulations due to your high $public_support score you have unlocked a secret path. Proceed to [[Hidden Decision Four]].]\
 
-(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="16" name=" Economy3" tags="" position="854,2008" size="100,100">Your decision to completely disregard the threats made by foreign countries sort of works. The threats made by the international community and its tone was mostly a front, with all bark with no bite. These countries value your trade benefits too, and do not fully embargo you, only putting temporary trade tariffs and quotas on your country to send a message. Your key supporters and constituents both approve of your decision to protect your country, giving you both financial and political support that allow you to easily pass laws later to help semi-comply with international carbon emission regulations to ease international tensions.
+(if: $public_support &lt; 59)[Unfortunately your poor public support score does not give you access to Decision Four. Please proceed to [[Decision Five]].]</tw-passagedata><tw-passagedata pid="16" name=" Economy3" tags="Economy" position="854,2008" size="100,100">Your decision to completely disregard the threats made by foreign countries sort of works. The threats made by the international community and its tone was mostly a front, with all bark with no bite. These countries value your trade benefits too, and do not fully embargo you, only putting temporary trade tariffs and quotas on your country to send a message. Your key supporters and constituents both approve of your decision to protect your country, giving you both financial and political support that allow you to easily pass laws later to help semi-comply with international carbon emission regulations to ease international tensions.
 
 Public Support +15, Economy -2, Climate Score +2
 (set: $economy_score2 to $economy_score2 - 2)\
@@ -642,7 +646,7 @@ What would you like to learn about next, [[the economy| economy]] or [[governmen
 What would you like to learn about next, [[the economy| economy]] or [[the climate change| climate]]?
 ] (else:) [
 What would you like to learn about next, [[the climate change| climate]],  [[the economy| economy]], or [[government accountability| government]]?
-]</tw-passagedata><tw-passagedata pid="50" name="article" tags="Article" position="699,600" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online.
+]</tw-passagedata><tw-passagedata pid="50" name="article" tags="Article2" position="699,600" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online.
 
 Do you choose to write an [[opinion piece]] or an [[objective summary]]?</tw-passagedata><tw-passagedata pid="51" name="Person 1 Endings" tags="School" position="700,895" size="100,100">(if: $climate_score &lt; 0)[
 Your single minded focus on the economy means that the public did not get a chance to learn about other important topics.  As a result, climate change is not made a priority, and the government continues to allow practices which harm the environment to make a profit. 
