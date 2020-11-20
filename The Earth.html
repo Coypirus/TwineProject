@@ -201,7 +201,7 @@ Public Support: $public_support
 [[Decision Two]] 
 </tw-passagedata><tw-passagedata pid="8" name="Economy" tags="Economy" position="869,1354" size="100,100">You picked the stance on climate change that stresses the economy of your country before anything. Your key supporters, oil executives and energy contractors, approve your decision, but your bottom line of the middle class fall out, as they think this decision is dishonest and in violation of your centrist political agenda you advertised during your campaign.
 
-Public Support -15, Economy +3, Climate Score -5
+Public Support -15, Economy +5, Climate Score -5
 
 (set: $economy_score2 to $economy_score2 + 5)\
 (set: $climate_score2 to $climate_score2 - 5)\
@@ -310,7 +310,7 @@ Public Support: $public_support
 [[Legacy]] - You want to do what you think is right, but you fear that by turning your back on the country’s elite, your future legacy that will shape your leadership into the country’s history will be damaged. Wanting to stay in this blissful state forever, you’d rather not do anything to jeopardize. Instead, you tell yourself that you will work on other policies instead to compensate.</tw-passagedata><tw-passagedata pid="18" name="Decision Five" tags="Government2" position="856,2310" size="100,100">(if: $public_support &lt; 0)[
 You lost all of your public support. You could no longer remain in office. 
 
-Continue to the [[Person2Ending-&gt;Person2Ending]] 
+Continue to the [[Person2Ending-&gt;Person 2 Ending]] 
 ]\
 
 (if: $public_support &gt;= 0)[
@@ -360,14 +360,14 @@ Public Support 0, Economy 0, Climate Score -5
 (set: $climate_score2 to $climate_score2 - 5)\
 (set: $public_support to $public_support + 0)\
 
-Continue to the [[Person2Ending-&gt;Person2Ending]]</tw-passagedata><tw-passagedata pid="22" name=" Science5" tags="Science2" position="999,2504" size="100,100">The public hears and takes your speech well. They know that the country relies on the energy industry too much, in detriment of both climate change and as well economic diversity. The speech sways them a significant amount, and now, as a result, the next election’s winner will be dictated by the next leader who is the most outspoken about climate change. With this speech, you know you made change.
+Continue to the [[Person 2 Ending-&gt;Person 2 Ending]]</tw-passagedata><tw-passagedata pid="22" name=" Science5" tags="Science2" position="999,2504" size="100,100">The public hears and takes your speech well. They know that the country relies on the energy industry too much, in detriment of both climate change and as well economic diversity. The speech sways them a significant amount, and now, as a result, the next election’s winner will be dictated by the next leader who is the most outspoken about climate change. With this speech, you know you made change.
 
 Public Support +10, Economy 0, Climate Score +5
 (set: $economy_score2 to $economy_score2 + 0)\
 (set: $climate_score2 to $climate_score2 + 5)\
 (set: $public_support to $public_support + 10)\
 
-Continue to the [[The Ending -&gt;Person2Ending]] </tw-passagedata><tw-passagedata pid="23" name="Third Character" tags="Coal2" position="1282.3333333333335,2600" size="100,100">You are an executive at a moderately large energy company that primarily uses fossil fuels as a means of providing energy. You are responsible for making sure the company is profitable while also secretly trying to steer the company towards developing a renewable energy infrastructure and slowly shifting from using fossil fuels to using renewable energy that doesn’t harm the environment significantly. However, this task may prove tricky as you are also responsible for making sure that the company’s revenue and essentially your company profitability value doesn’t drop too much or else you’ll be fired and replaced by someone who won’t seek to implement renewable energy sources at the company, which will cause the green level to drop and eventually earth’s demise. 
+Continue to the [[The Ending -&gt;Person 2 Ending]] </tw-passagedata><tw-passagedata pid="23" name="Third Character" tags="Coal2" position="1282,2600" size="100,100">You are an executive at a moderately large energy company that primarily uses fossil fuels as a means of providing energy. You are responsible for making sure the company is profitable while also secretly trying to steer the company towards developing a renewable energy infrastructure and slowly shifting from using fossil fuels to using renewable energy that doesn’t harm the environment significantly. However, this task may prove tricky as you are also responsible for making sure that the company’s revenue and essentially your company profitability value doesn’t drop too much or else you’ll be fired and replaced by someone who won’t seek to implement renewable energy sources at the company, which will cause the green level to drop and eventually earth’s demise. 
 
 Go to [[work |Decision 1]]
 
@@ -574,18 +574,18 @@ Climate Score: $overall_env
 Economy Score: $overall_econ
 Climate Score: $overall_env
 
-(if: $overall_econ &gt; $overall_env)[
+{(if: $overall_econ &gt; $overall_env)[
 Uh oh! During your time serving in each player’s capacity, you were able to make sure the economy was running well but you totally forgot about Earth’s climate. As a result, while energy companies will continue to do well profitability wise, Earth is done for in the next couple of decades. 
 ]
 (else-if: $overall_env &gt; $overall_econ)[
 Okay! During your time serving in each player’s capacity, you were able to create a huge difference with regards to Earth’s fight against climate change and help being to save Earth! However, in the process, you’ve really hurt Earth’s economy, so even though you’ve helped save humanity’s and the futures of later generations, they might not necessarily enjoy the best quality of living. . 
 ]
-(else-if: $overall_env = $overall_econ and $overall_env &lt;= 0)[
+(else-if: $overall_env is $overall_econ and $overall_env &lt;= 0)[
 Uh oh… during your time serving in each player’s capacity, not only were you not able to save Earth and change the trajectory of Earth&#39;s battle against climate change, but you also tanked the economy in the meantime. 
 ]
-(else-if: $overall_env = $overall_econ and $overall_env &gt; 0)[
+(else-if: $overall_env is $overall_econ and $overall_env &gt; 0)[
 Ta da! Earth has been saved! During your time serving in each player’s capacity, you were able to cause discernible change, make a difference, abs have helped earth go more green and have thus saved it from a disastrous fate. Well done!
-]</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
+]}</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
 
 This interview is your chance to make it big and get your name out there, which will help you become a recognized member of your school community and beyond.
 
@@ -602,8 +602,8 @@ After walking on stage and shaking hands, you prepare to ask your first question
 (set: $economy_index to 0)
 (set: $government_index to 0)
 (set: $climate_index to 0)</tw-passagedata><tw-passagedata pid="46" name=" economy" tags="Economy" position="501,96" size="100,100">{(if: $economy_index is 0)[
-You know that the economy is always an important and relevant issue, and you would like to see it addressed.  
-]\
+You know that the economy is always an important and relevant issue, and you would like to see it addressed.&lt;br&gt;  
+]
 You ask him about the state of the economy.  
 (if: $economy_index is 0)[
 He responds:
@@ -641,12 +641,15 @@ He responds:
 ]
 (set: $q_remaining to $q_remaining - 1)
 (set: $government_index to $government_index + 1)
-}
 (if: $government_index &lt; 2 and $q_remaining &gt; 0)[
+&lt;br&gt;
 Do you [[ask him to expand on the current topic| government]] or [[move the discussion to another topic| change topic]]?
+] (else-if: $government_index &gt;= 2 and $q_remaining &gt; 0)[
+&lt;br&gt;
+[[Move the discussion to another topic| change topic]]
 ](else:)[
 [[Continue|article]]
-]</tw-passagedata><tw-passagedata pid="48" name=" climate" tags="Ice" position="498,495" size="100,100">{(if: $climate_index is 0)[
+]}</tw-passagedata><tw-passagedata pid="48" name=" climate" tags="Ice" position="498,495" size="100,100">{(if: $climate_index is 0)[
 You ask about climate change because it is an important issue which has not been getting a lot of focus when it should. 
 &lt;br&gt;
 He responds:
@@ -677,30 +680,32 @@ What would you like to learn about next, [[the economy| economy]] or [[the clima
 What would you like to learn about next, [[the climate change| climate]],  [[the economy| economy]], or [[government accountability| government]]?
 ]</tw-passagedata><tw-passagedata pid="50" name="article" tags="Article2" position="699,600" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online.
 
-Do you choose to write an [[opinion piece]] or an [[objective summary]]?</tw-passagedata><tw-passagedata pid="51" name="Person 1 Endings" tags="School" position="700,895" size="100,100">
-(if: $climate_score &lt; 0)[
+Do you choose to write an [[opinion piece]] or an [[objective summary]]?</tw-passagedata><tw-passagedata pid="51" name="Person 1 Endings" tags="School" position="700,895" size="100,100">{(if: $climate_score &lt; 0)[
 (set: $overall_econ to 1)
 Your single minded focus on the economy means that the public did not get a chance to learn about other important topics.  As a result, climate change is not made a priority, and the government continues to allow practices which harm the environment to make a profit. 
 ] (else-if: $economy_score &lt; 0)[
 (set: $overall_env to 1)
-While climate change is undoubtedly important, people were hoping to hear about other issues as well, and not just environmental policy.  Your single minded approach bothered them, and turned many of them away.  As a result, the candidate is never elected, and all the climate policies they were going to enact are never implemented.  
+While climate change is undoubtedly important, people were hoping to hear about other issues as well, and not just environmental policy. Your single minded approach bothered them, and turned many of them away.  As a result, the candidate is never elected, and all the climate policies they were going to enact are never implemented.  
 ] (else-if: $climate_score &gt; 0 and $economy_score &gt; 0)[
 (set: $overall_econ to $overall_econ + 1)
 (set: $overall_climate to $overall_climate + 1)
-You successfully interviewed the candidate about a variety of topics, and gave your own contributions as well.  
+You successfully interviewed the candidate about a variety of topics, and gave your own contributions as well.
+&lt;br&gt;
 The candidate is elected, and begins enacting climate policies such as funding research into renewable energy.  To the surprise of many, this doesn’t hurt the economy, but instead boosts it, as new jobs are created in clean energy and existing loopholes are fixed.  The state thrives, and becomes a model for other states to follow.
+&lt;br&gt;
 As for you, thanks to your excellent performance and the success of your article, you have been elected to a position within the college student council, and you have a job in public broadcasting lined up for after graduation.
 ]
+}
 
 &lt;b&gt;Overall Scoreboard&lt;/b&gt;
 Economy Score: $overall_econ
 Climate Score: $overall_env
-Go to [[Person 2]]</tw-passagedata><tw-passagedata pid="52" name="Person2Ending" tags="" position="1324,2393.3333333333335" size="100,100">&lt;b&gt;Final Scoreboard&lt;/b&gt;
+Go to [[Person 2]]</tw-passagedata><tw-passagedata pid="52" name="Person 2 Ending" tags="Politics" position="1324,2393" size="100,100">&lt;b&gt;Final Scoreboard&lt;/b&gt;
 Economy Score: $economy_score2
 Climate Score: $climate_score2
 Public Support: $public_support
 
-(if: $economy_score2 &gt;= -1 and $climate_score2 &gt;= 5)[
+{(if: $economy_score2 &gt;= -1 and $climate_score2 &gt;= 5)[
 (set: $overall_env to $overall_env + 1)
 (set: $overall_econ to $overall_econ + 1)
 You were a relatively successful politician in the fact that you made significant strides towards climate change issues while maintaining your country’s economy. Good job!
@@ -712,7 +717,7 @@ You were a relatively successful politician in the fact that you made significan
 (else:)[
 (set: $overall_env to $overall_env + 1)
 During your term as a leader, you did not make any significant strides as a leader against climate change. Your legacy, as a leader, becomes forgettable as much as the last 10 leaders, and the Earth is closer to its tipping point than ever before.
-]
+]}
 
 &lt;b&gt;Overall Scoreboard&lt;/b&gt;
 Economy Score: $overall_econ
