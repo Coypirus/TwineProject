@@ -446,7 +446,7 @@ Upper level executives are happy with how the company is performing. They let yo
 Revenue: $company_revenue
 Green level: $green_level
 
-(Set: $solar_energy to false)\</tw-passagedata><tw-passagedata pid="30" name="More windmills" tags="Wind" position="842,3100" size="100,100">You choose building more windmills.
+(Set: $solar_energy to false)</tw-passagedata><tw-passagedata pid="30" name="More windmills" tags="Wind" position="842,3100" size="100,100">You choose building more windmills.
 
 [[Continue |Decision 3]]
 
@@ -480,7 +480,9 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="33" name="Go behi
 Revenue: $company_revenue
 Green level: $green_level</tw-passagedata><tw-passagedata pid="34" name="Reject the offer" tags="Coal" position="621,3448" size="100,100">&#39;&#39;The End&#39;&#39;
 
-You got fired
+You got fired.
+
+[[Continue|The End]]
 
 &lt;b&gt;Scoreboard&lt;/b&gt;
 Revenue: $company_revenue
@@ -521,13 +523,13 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="37" name="Decisio
 
 [[Continue |Person 3 Endings]]
 
-(Set: $green_level to $green_level + 2)\
-(Set: $company_revenue to $company_revenue + 10)\</tw-passagedata><tw-passagedata pid="42" name="More Factories" tags="Coal3" position="667,3743" size="100,100">You decided to develop more coal to make you boss happy. 
+(Set: $green_level to $green_level + 2)
+(Set: $company_revenue to $company_revenue + 10)</tw-passagedata><tw-passagedata pid="42" name="More Factories" tags="Coal3" position="667,3743" size="100,100">You decided to develop more coal to make you boss happy. 
 
 [[Continue |Person 3 Endings]]
 
-(Set: $green_level to $green_level - 2)\
-(Set: $company_revenue to $company_revenue + 20)\</tw-passagedata><tw-passagedata pid="43" name="Person 3 Endings" tags="Coal3" position="570,3900" size="100,100">4 months into your career as a high-level executive of a fossil fuel company, an article from the financial magazine frobes comes out. In it, frobes ranks companies based on not only a company’s profit wise but their efforts to be more green. Because your company is an energy company, frobes ranks you based on its profitability in combination with its efforts to have more renewable energy sectors. Your company’s ranking in this article is very important as it can affect share prices, which in turn can affect the longevity of the company and the company’s shareholders’ confidence within the executive team and whether or not you and your coworkers will be allowed to remain at the company.
+(Set: $green_level to $green_level - 2)
+(Set: $company_revenue to $company_revenue + 20)</tw-passagedata><tw-passagedata pid="43" name="Person 3 Endings" tags="Coal3" position="460,3901" size="100,100">4 months into your career as a high-level executive of a fossil fuel company, an article from the financial magazine frobes comes out. In it, frobes ranks companies based on not only a company’s profit wise but their efforts to be more green. Because your company is an energy company, frobes ranks you based on its profitability in combination with its efforts to have more renewable energy sectors. Your company’s ranking in this article is very important as it can affect share prices, which in turn can affect the longevity of the company and the company’s shareholders’ confidence within the executive team and whether or not you and your coworkers will be allowed to remain at the company.
 
 {(if: $green_level &lt;= 2)[
 Your forbes ranking is very low, your profitability doesn’t matter and forbes ranks your company very low. Your share price tanks, profits go down the roof, and your company decides to layoff thousands including yourself. 
@@ -550,7 +552,7 @@ Your company ranks moderately, your share prices are stable, but your bosses are
 Your company ranks highly, your share prices are stable, and your bosses are very happy and give u a bonus. You get a pretty good scaled climate score and a good scaled econ score. 
 ]]}
 
-[[The End]]</tw-passagedata><tw-passagedata pid="44" name="The End" tags="" position="570,4050" size="100,100">The End</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
+[[The End]]</tw-passagedata><tw-passagedata pid="44" name="The End" tags="" position="600,4050" size="100,100">The End</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
 
 This interview is your chance to make it big and get your name out there, which will help you become a recognized member of your school community and beyond.
 
