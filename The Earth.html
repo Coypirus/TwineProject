@@ -126,8 +126,8 @@ tw-story[tags~="Speech"] {
 
 
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="Earth" position="100,200" size="100,100">&#39;&#39;This is a battle to save the World.&#39;&#39;
-[[Let&#39;s Begin!|Person 1]]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article" position="800,744" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="Earth" position="100.33333333333326,200" size="100,100">&#39;&#39;This is a battle to save the World.&#39;&#39;
+[[Let&#39;s Begin!|Person 1]]</tw-passagedata><tw-passagedata pid="2" name="opinion piece" tags="Article" position="800.3333333333336,744.9999999999999" size="100,100">You write an opinion piece about the night, detailing your experience, what you thought about the candidate, and the best way for the state to move forward.
 
 You choose to focus your piece on either the (link: &quot;economy&quot;)[\
 	(set: $economy_score to it + 2)\
@@ -136,14 +136,14 @@ You choose to focus your piece on either the (link: &quot;economy&quot;)[\
 ] or the (link: &quot;climate change&quot;)[\
 	(set: $economy_score to it - 1)\
 	(set: $cliate_score to it + 2)
-	(go-to: &quot;Person 1 Endings&quot;)\]</tw-passagedata><tw-passagedata pid="3" name="objective summary" tags="Article" position="596,743" size="100,100">You decide that getting the information out is more important than your personal subjective opinion, so you write an objective summary of the night.
+	(go-to: &quot;Person 1 Endings&quot;)\]</tw-passagedata><tw-passagedata pid="3" name="objective summary" tags="Article" position="596.9999999999999,743.6666666666667" size="100,100">You decide that getting the information out is more important than your personal subjective opinion, so you write an objective summary of the night.
 
 The article is succinct and informative, and attracts many readers.
 
 (link: &quot;Next&quot;)[(go-to: &quot;Person 1 Endings&quot;)]
 
 (set: $climate_score to $climate_score + 1)
-(set: $economy_score to $economy_score + 1)</tw-passagedata><tw-passagedata pid="4" name="Person 2" tags="Politics" position="699,1055" size="100,100">You are a freshly elected leader of a small country with limited powers on Earth and have the power to make decisions that will either lead towards or away from climate destruction for Earth in the next few years. The choices presented in the game are not so clear cut as they seem, as an elected representative you have zero ability to make an executive decision without support, whether that be through political or financial means.  
+(set: $economy_score to $economy_score + 1)</tw-passagedata><tw-passagedata pid="4" name="Person 2" tags="Politics" position="699,1055.6666666666667" size="100,100">You are a freshly elected leader of a small country with limited powers on Earth and have the power to make decisions that will either lead towards or away from climate destruction for Earth in the next few years. The choices presented in the game are not so clear cut as they seem, as an elected representative you have zero ability to make an executive decision without support, whether that be through political or financial means.  
 
 Go to [[Decision One]]
 
@@ -502,49 +502,39 @@ Green level: $green_level</tw-passagedata><tw-passagedata pid="37" name="Decisio
 [[Not to allocate more money for construction |No Money]]
 [[Develop coal|More Factories]]</tw-passagedata><tw-passagedata pid="39" name="More Money" tags="Renewable" position="309,3746" size="100,100">You decided to allocate more money for construction. Soon, the CFO discovered your secretive plot, you’re fired immediately, and you’re replaced by someone who doesn’t care at all about being environmentally friendly.
 
-[[Continue |Person 3 Endings]]
+[[Continue |Person 3 Ending]]
 
 (Set: $green_level to 0)
 (Set: $company_revenue to $company_revenue + 100)
 </tw-passagedata><tw-passagedata pid="40" name="No Money" tags="" position="478,3745" size="100,100">You are afraid that your secret plot will be discovered, so you reject the offer. 
 
-[[Continue |Person 3 Endings]]
+[[Continue |Person 3 Ending]]
 
 (Set: $company_revenue to $company_revenue + 10)
 (Set: $green_level to $green_level + 1)</tw-passagedata><tw-passagedata pid="41" name="Keep Funding" tags="Coal2" position="874,3743" size="100,100">You further funded the development of the solar division.
 
-[[Continue |Person 3 Endings]]
+[[Continue |Person 3 Ending]]
 
 (Set: $green_level to $green_level + 2)\
 (Set: $company_revenue to $company_revenue + 10)\</tw-passagedata><tw-passagedata pid="42" name="More Factories" tags="Coal3" position="667,3743" size="100,100">You decided to develop more coal to make you boss happy. 
 
-[[Continue |Person 3 Endings]]
+[[Continue |Person 3 Ending]]
 
 (Set: $green_level to $green_level - 2)\
-(Set: $company_revenue to $company_revenue + 20)\</tw-passagedata><tw-passagedata pid="43" name="Person 3 Endings" tags="Coal3" position="570,3900" size="100,100">4 months into your career as a high-level executive of a fossil fuel company, an article from the financial magazine frobes comes out. In it, frobes ranks companies based on not only a company’s profit wise but their efforts to be more green. Because your company is an energy company, frobes ranks you based on its profitability in combination with its efforts to have more renewable energy sectors. Your company’s ranking in this article is very important as it can affect share prices, which in turn can affect the longevity of the company and the company’s shareholders’ confidence within the executive team and whether or not you and your coworkers will be allowed to remain at the company.
+(Set: $company_revenue to $company_revenue + 20)\</tw-passagedata><tw-passagedata pid="43" name="Person 3 Ending" tags="Coal3" position="570,3900" size="100,100">4 months into your career as a high-level executive of a fossil fuel company, an article from the financial magazine frobes comes out. In it, frobes ranks companies based on not only a company’s profit wise but their efforts to be more green. Because your company is an energy company, frobes ranks you based on its profitability in combination with its efforts to have more renewable energy sectors. Your company’s ranking in this article is very important as it can affect share prices, which in turn can affect the longevity of the company and the company’s shareholders’ confidence within the executive team and whether or not you and your coworkers will be allowed to remain at the company.
 
-{(if: $green_level &lt;= 2)[
-Your forbes ranking is very low, your profitability doesn’t matter and forbes ranks your company very low. Your share price tanks, profits go down the roof, and your company decides to layoff thousands including yourself. 
-](else-if: $green_level &lt;= 4 and $green_level &gt; 2)[
-(if: $company_revenue &gt;= 125)[
-Your company ranks decently, you’re allowed to keep your job and the company performs ok. However, your overall scaled climate score is low
-](else:)[
-Your company ranks low, and you’re fired. The overall scaled climate score is low and scaled economy score is low
+(if: $green_level &lt;= 0)[
+Your frobes ranking is very low since your green level is too low. Your profitability doesn’t matter and frobes ranks your company very low. Your share price tanks, profits go down the roof, and your company decides to layoff thousands including yourself. 
+]\(else-if: $green_level &lt;= 3 and $company_revenue &gt;= 125)[
+Your company ranks decently. You’re allowed to keep your job and the company performs OK.
+]\(else-if: $green_level &gt;= 5 and $company_revenue &gt;= 100 and $green_level &lt; 7)[
+Your company ranks very highly. Your share prices increase. You get a bonus and your bosses are happy with you.
+]\(else-if: $green_level &gt;= 7 and $company_revenue &lt; 100)[
+Your company ranks moderately, your share prices are stable, but your bosses are not happy that profits are low and you get demoted. 
+]\(else:)[
+You company ranks highly.
 ]
-](else-if: $green_level &gt;= 5 and $green_level &lt; 7)[
-(if: $company_revenue &lt; 100)[
-Your company ranks decently, you’re allowed to keep your job and the company performs ok. Additionally, you get a decent scaled climate score. However, your overall scaled economy score is low
-] (else:)[
-your company ranks decently, your share prices increase, you get a bonus and your bosses are happy with you. Additionally, you get a decent scaled climate score and a good scaled economy score.
-]
-](else-if: $green_level &gt;= 7)[
-(if: $company_revenue &lt; 100)
-Your company ranks moderately, your share prices are stable, but your bosses are not happy that profits are low and you get demoted. However, you get a pretty good scaled climate score but low scaled economy score.
-] (else:)[
-Your company ranks highly, your share prices are stable, and your bosses are very happy and give u a bonus. You get a pretty good scaled climate score and a good scaled econ score. 
-]}
-
-[[The End]]</tw-passagedata><tw-passagedata pid="44" name="The End" tags="" position="570,4050" size="100,100">The End</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
+[[The End]]</tw-passagedata><tw-passagedata pid="44" name="The End" tags="" position="570,4050" size="100,100">The End</tw-passagedata><tw-passagedata pid="45" name="Person 1" tags="School" position="296.66666666666634,300" size="100,100">You are a 20 year old college student who has been chosen for a committee to plan for the upcoming political town hall that will be happening at your university.  At the town hall, you will be conducting a small interview for the candidate, who is currently running for State Governor.  
 
 This interview is your chance to make it big and get your name out there, which will help you become a recognized member of your school community and beyond.
 
@@ -560,7 +550,7 @@ After walking on stage and shaking hands, you prepare to ask your first question
 
 (set: $economy_index to 0)
 (set: $government_index to 0)
-(set: $climate_index to 0)</tw-passagedata><tw-passagedata pid="46" name=" economy" tags="Economy" position="501,96" size="100,100">{(if: $economy_index is 0)[
+(set: $climate_index to 0)</tw-passagedata><tw-passagedata pid="46" name=" economy" tags="Economy" position="501.6666666666666,96.66666666666674" size="100,100">{(if: $economy_index is 0)[
 You know that the economy is always an important and relevant issue, and you would like to see it addressed.  
 ]\
 You ask him about the state of the economy.  
@@ -586,7 +576,7 @@ After talking for a bit, he looks at you expectantly.
 Do you [[ask him to expand on the current topic| economy]] or [[move the discussion to another topic| change topic]]?
 ](else:)[
 [[Continue|article]]
-]</tw-passagedata><tw-passagedata pid="47" name=" government" tags="Government" position="500,296" size="100,100">{(if: $government_index is 0)[
+]</tw-passagedata><tw-passagedata pid="47" name=" government" tags="Government" position="500.00000000000006,296.66666666666674" size="100,100">{(if: $government_index is 0)[
 You would like to see the candidate address the problem of government accountability, as there have been several reports recently involving big corporations exploiting lobbying loopholes.
 You tell him as much, though in more nicely-worded terms.
 &lt;br&gt;&lt;br&gt;
@@ -605,7 +595,7 @@ He responds:
 Do you [[ask him to expand on the current topic| government]] or [[move the discussion to another topic| change topic]]?
 ](else:)[
 [[Continue|article]]
-]</tw-passagedata><tw-passagedata pid="48" name=" climate" tags="Ice" position="498,495" size="100,100">{(if: $climate_index is 0)[
+]</tw-passagedata><tw-passagedata pid="48" name=" climate" tags="Ice" position="498.33333333333314,495.0000000000001" size="100,100">{(if: $climate_index is 0)[
 You ask about climate change because it is an important issue which has not been getting a lot of focus when it should. 
 &lt;br&gt;
 He responds:
@@ -626,7 +616,7 @@ He responds:
 Do you [[ask him to expand on the current topic| climate]] or [[move the discussion to another topic| change topic]]?
 ](else:)[
 [[Continue|article]]
-]</tw-passagedata><tw-passagedata pid="49" name=" change topic" tags="Government" position="796,298" size="100,100">(if: $economy_index is 3)[
+]</tw-passagedata><tw-passagedata pid="49" name=" change topic" tags="Government" position="796.6666666666666,298.3333333333334" size="100,100">(if: $economy_index is 3)[
 What would you like to learn about next, [[the climate change| climate]] or [[government accountability| government]]?
 ] (else-if: $climate_index is 3)[
 What would you like to learn about next, [[the economy| economy]] or [[government accountability| government]]?
@@ -634,9 +624,9 @@ What would you like to learn about next, [[the economy| economy]] or [[governmen
 What would you like to learn about next, [[the economy| economy]] or [[the climate change| climate]]?
 ] (else:) [
 What would you like to learn about next, [[the climate change| climate]],  [[the economy| economy]], or [[government accountability| government]]?
-]</tw-passagedata><tw-passagedata pid="50" name="article" tags="Article" position="699,600" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online.
+]</tw-passagedata><tw-passagedata pid="50" name="article" tags="Article" position="699.9999999999998,600.0000000000001" size="100,100">After the night is over, you are put in charge of writing an article about the highlights of the town hall, which will then be posted online.
 
-Do you choose to write an [[opinion piece]] or an [[objective summary]]?</tw-passagedata><tw-passagedata pid="51" name="Person 1 Endings" tags="School" position="700,895" size="100,100">(if: $climate_score &lt; 0)[
+Do you choose to write an [[opinion piece]] or an [[objective summary]]?</tw-passagedata><tw-passagedata pid="51" name="Person 1 Endings" tags="School" position="700.3333333333335,895.6666564941406" size="100,100">(if: $climate_score &lt; 0)[
 Your single minded focus on the economy means that the public did not get a chance to learn about other important topics.  As a result, climate change is not made a priority, and the government continues to allow practices which harm the environment to make a profit. 
 ] (else-if: $economy_score &lt; 0)[
 While climate change is undoubtedly important, people were hoping to hear about other issues as well, and not just environmental policy.  Your single minded approach bothered them, and turned many of them away.  As a result, the candidate is never elected, and all the climate policies they were going to enact are never implemented.  
